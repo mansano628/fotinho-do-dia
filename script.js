@@ -125,7 +125,9 @@ showImageButton.addEventListener('click', () => {
     const imageOfTheDay = getImageOfTheDay();
 
     if (!imageShown) {
-        dailyImageElement.src = `imagens/${imageOfTheDay.src}`;
+        // Usar o caminho completo da imagem
+        dailyImageElement.src = `https://seu-cdn.com/imagens/${imageOfTheDay.src}`;
+        dailyImageElement.loading = 'lazy'; // Lazy loading para garantir que a imagem só carregue quando necessário
         dailyImageElement.style.display = 'block';
         descriptionElement.textContent = imageOfTheDay.description;
         descriptionElement.style.display = 'block';
